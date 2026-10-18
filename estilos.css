@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@400;600&display=swap');
+
+:root{
+  --papel:#e8f0e2;
+  --hoja:#fdfefb;
+  --renglon:#c9dac5;
+  --tinta:#13264a;
+  --azul:#1f4fa3;
+  --rojo:#b3261e;
+  --margen:#cf5a50;
+  --resaltador:#f7e27c;
+  --resaltador-suave:#fdf3b8;
+  --izq:64px;
+  --titulos:'Bricolage Grotesque','Trebuchet MS',Arial,sans-serif;
+  --texto:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --datos:'IBM Plex Mono','Courier New',monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;
+  color:var(--tinta);
+  font-family:var(--texto);
+  font-size:17px;
+  line-height:28px;
+  background-color:var(--papel);
+  background-image:linear-gradient(var(--renglon) 1px,transparent 1px);
+  background-size:100% 28px;
+}
+
+h1,h2,h3,nav,button,th,label{font-family:var(--titulos)}
+
+/* ---------- Navegación ---------- */
+nav{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:5;
+  display:flex;overflow-x:auto;
+  background:var(--tinta);
+  border-bottom:3px solid var(--rojo);
+  padding:0 10px;
+}
+nav a{
+  color:#e8f0e2;text-decoration:none;
+  font-size:15px;font-weight:600;
+  padding:14px 14px;white-space:nowrap;
+}
+nav a:hover{background:var(--resaltador);color:var(--tinta)}
+nav a:focus-visible{outline:3px solid var(--resaltador);outline-offset:-3px}
+
+/* ---------- Encabezado ---------- */
+header{
+  background:var(--tinta);
+  color:#fff;
+  padding:64px calc(max(0px,(100% - 900px)/2) + 20px) 52px calc(max(0px,(100% - 900px)/2) + var(--izq));
+  border-bottom:10px double var(--rojo);
+}
+header small{
+  display:block;
+  font-family:var(--titulos);font-size:16px;font-weight:600;
+  letter-spacing:.02em;color:var(--resaltador);
+}
+header h1{
+  font-weight:800;
+  font-size:clamp(40px,9vw,84px);
+  line-height:.98;letter-spacing:-.03em;
+  margin:14px 0 22px;
+}
+header p{max-width:46ch;margin:0;font-size:18px;color:#d3def0}
+
+.logo{
+  display:block;width:96px;height:96px;object-fit:contain;
+  margin:0 0 20px;background:#fff;border-radius:50%;padding:4px;
+  border:3px solid var(--resaltador);
+}
+
+/* ---------- Estructura con margen de libro mayor ---------- */
+main{
+  position:relative;
+  max-width:900px;margin:0 auto;
+  padding:0 20px 20px var(--izq);
+}
+main::before{
+  content:"";position:absolute;top:0;bottom:0;
+  left:calc(var(--izq) - 26px);width:5px;
+  border-left:1px solid var(--margen);
+  border-right:1px solid var(--margen);
+}
+section{margin:56px 0}
+
+h2{
+  width:fit-content;max-width:100%;
+  margin:0 0 24px;padding:0 0 4px;
+  font-size:clamp(26px,5vw,38px);font-weight:800;
+  line-height:1.15;letter-spacing:-.02em;
+  color:var(--tinta);
+  border-bottom:7px double var(--rojo);
+}
+h3{margin:0;font-size:19px;font-weight:800;line-height:1.3;color:var(--tinta)}
+
+/* ---------- Fichas ---------- */
+.card{
+  background:var(--hoja);
+  border:1px solid var(--renglon);
+  border-left:8px solid var(--azul);
+  border-radius:2px 18px 2px 2px;
+  padding:18px 20px;margin:16px 0;
+}
+.card p{margin:6px 0 0}
+.grid,.grid-centrado{
+  display:grid;gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+.grid .card,.grid-centrado .card{margin:0}
+
+/* ---------- Tabla estilo libro mayor ---------- */
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;margin-top:12px}
+th{
+  background:var(--tinta);color:#fff;
+  text-align:left;font-size:15px;font-weight:600;
+  padding:12px;border-bottom:5px double var(--resaltador);
+}
+td{padding:12px;border-bottom:1px solid var(--renglon);vertical-align:top;font-size:16px;line-height:24px}
+td+td,th+th{border-left:1px solid #e9bdb8}
+td:first-child{font-family:var(--titulos);font-weight:600}
+
+/* ---------- Fórmulas ---------- */
+.f{
+  font-family:var(--datos);font-size:14px;line-height:26px;
+  background:var(--resaltador-suave);
+  border-bottom:4px double var(--rojo);
+  padding:10px 14px;margin:12px 0 4px;overflow-x:auto;
+}
+
+/* ---------- Calculadora ---------- */
+label{display:block;margin-top:14px;font-size:14px;font-weight:600;line-height:20px}
+input,textarea{
+  width:100%;padding:6px 2px;
+  font-family:var(--datos);font-size:16px;color:var(--tinta);
+  background:transparent;border:0;border-bottom:2px solid var(--tinta);border-radius:0;
+}
+input:focus{background:var(--resaltador-suave);outline:none}
+input:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+button{
+  margin-top:18px;padding:12px 24px;
+  font-size:16px;font-weight:600;color:#fff;
+  background:var(--tinta);border:0;border-bottom:4px solid var(--rojo);border-radius:0;
+  cursor:pointer;
+}
+button:hover{background:var(--azul)}
+button:active{transform:translateY(1px)}
+button:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.res{
+  margin-top:16px;padding:10px 14px;
+  font-family:var(--datos);font-size:15px;font-weight:500;line-height:26px;
+  background:var(--resaltador);border-left:6px solid var(--rojo);
+}
+.res:empty{display:none}
+
+/* ---------- Vida universitaria: mismo tamaño, fotos completas ---------- */
+.evento{margin:36px 0}
+.evento h3{font-size:23px;text-align:left;margin-bottom:14px}
+
+.galeria{
+  display:grid;gap:12px;
+  grid-template-columns:repeat(3,1fr);
+}
+.galeria figure{
+  margin:0;
+  background:#fff;padding:6px;
+  border:1px solid var(--renglon);
+  box-shadow:0 2px 0 var(--renglon);
+}
+.galeria img{
+  display:block;width:100%;height:200px;   /* cambia 200px para hacerlas más grandes o pequeñas */
+  object-fit:contain;                       /* muestra la foto completa, sin cortar */
+  background:var(--papel);                  /* color de las franjas laterales */
+}
+
+/* Si dejaste style="text-align:center" en el párrafo de #vida */
+#vida>p{text-align:left!important}
+
+/* ---------- Pie ---------- */
+footer{
+  background:var(--tinta);color:#d3def0;
+  font-family:var(--titulos);font-size:15px;
+  padding:30px calc(max(0px,(100% - 900px)/2) + 20px) 30px calc(max(0px,(100% - 900px)/2) + var(--izq));
+  border-top:10px double var(--rojo);
+}
+
+/* ---------- Celular ---------- */
+@media (max-width:600px){
+  :root{--izq:44px}
+  body{font-size:16px}
+  .card{padding:16px}
+  .galeria{grid-template-columns:1fr}
+  .galeria img{height:220px}
+}

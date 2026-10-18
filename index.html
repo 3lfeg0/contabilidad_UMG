@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contabilidad Administrativa | UMG</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav>
+<a href="#fundamentos">Fundamentos web</a><a href="#teoria">Teoría</a><a href="#herramientas">Herramientas</a><a href="#calculadora">Calculadora VAN/TIR</a><a href="#vida">Vida universitaria</a>
+</nav>
+<header>
+<small>Universidad Mariano Gálvez de Guatemala</small>
+<h1>Contabilidad Administrativa</h1>
+<p>Recurso digital del curso Contabilidad II: conceptos, herramientas prácticas y toma de decisiones gerenciales.</p>
+</header>
+<main>
+
+<section id="fundamentos">
+<h2>1. Fundamentos de creación web</h2>
+<div class="grid-centrado">
+<div class="card"><h3>Diseño</h3><p>Diseño limpio, que permite una lectura comoda debido a los colores usados.</p></div>
+<div class="card"><h3>Navegación</h3><p>Menú fijo e intuitivo que facilita la navegación por la página de forma cómoda.</p></div>
+<div class="card"><h3>Adaptabilidad</h3><p>La página se ajusta a celular, tableta y computadora mediante cuadrículas flexibles.</p></div>
+<div class="card"><h3>Colores y tipografía</h3><p>Tonos azules que recuerdan a los colores del logotipo de la universidad Mariano Galvez de Guatemala.</p></div>
+</div>
+</section>
+
+<section id="teoria">
+<h2>2. Aspectos teóricos</h2>
+<div class="card">
+<h3>¿Qué es la Contabilidad Administrativa?</h3>
+<p>Es el proceso de recopilar, analizar y presentar información financiera y no financiera para que los gerentes planifiquen y controlen la toma de decisiones dentro de la empresa.</p>
+</div>
+<div class="card scroll">
+<h3>Diferencias entre las contabilidades</h3>
+<table>
+<tr><th>Aspecto</th><th>Financiera</th><th>De Costos</th><th>Administrativa</th></tr>
+<tr><td>Usuarios</td><td>Externos: inversionistas, bancos, SAT</td><td>Gerencia y producción</td><td>Gerentes internos</td></tr>
+<tr><td>Objetivo</td><td>Informar sobre la situación y resultados</td><td>Determinar el costo de productos o servicios</td><td>Apoyar la planificación, control y decisiones</td></tr>
+<tr><td>Enfoque</td><td>Pasado (histórico)</td><td>Pasado y presente</td><td>Futuro (proyecciones)</td></tr>
+<tr><td>Normas</td><td>Obligatoria (NIIF)</td><td>Flexible</td><td>Sin normas obligatorias</td></tr>
+<tr><td>Informes</td><td>Estados financieros</td><td>Hojas y estados de costos</td><td>Presupuestos, análisis y proyecciones</td></tr>
+</table>
+</div>
+<div class="grid">
+<div class="card"><h3>Objetivos</h3><p>Planificar, controlar operaciones, evaluar el desempeño y apoyar la toma de decisiones.</p></div>
+<div class="card"><h3>Conceptos clave</h3><p>Costos fijos y variables, margen de contribución, presupuesto, costos relevantes y centros de responsabilidad.</p></div>
+<div class="card"><h3>Importancia</h3><p>Reduce la incertidumbre: permite elegir entre alternativas con datos y no con intuición.</p></div>
+</div>
+</section>
+
+<section id="herramientas">
+<h2>3. Herramientas de gestión práctica</h2>
+<div class="card"><h3>Rentabilidad y eficiencia</h3>
+<p>Miden qué tan bien la empresa convierte recursos en utilidades.</p>
+<div class="f">Margen neto = Utilidad neta / Ventas<br>ROA = Utilidad neta / Activos totales<br>ROE = Utilidad neta / Patrimonio<br>Rotación de activos = Ventas / Activos totales</div></div>
+<div class="card"><h3>Análisis de flujo de efectivo</h3>
+<p>Muestra las entradas y salidas reales de dinero (operación, inversión y financiamiento). Una empresa puede tener utilidades y aun así quedarse sin liquidez.</p></div>
+<div class="card"><h3>Decisiones de comprar o producir</h3>
+<p>Se comparan solo los costos relevantes: los que cambian según la decisión. Si producir cuesta menos que el precio de compra, y hay capacidad disponible, conviene producir. También se consideran calidad, confiabilidad y uso alternativo de la capacidad.</p></div>
+<div class="card"><h3>Análisis patrimonial</h3>
+<p>Evalúa la estructura del balance: solvencia, endeudamiento y liquidez.</p>
+<div class="f">Razón corriente = Activo corriente / Pasivo corriente<br>Endeudamiento = Pasivo total / Activo total</div></div>
+<div class="card"><h3>Valor Actual Neto (VAN)</h3>
+<p>Suma los flujos futuros descontados a una tasa y les resta la inversión inicial. Si VAN &gt; 0, el proyecto crea valor y se acepta.</p>
+<div class="f">VAN = -I₀ + Σ FNEₜ / (1 + r)ᵗ</div></div>
+<div class="card"><h3>Tasa Interna de Retorno (TIR)</h3>
+<p>Es la tasa de descuento que hace el VAN igual a cero. Si TIR &gt; tasa mínima exigida, el proyecto es aceptable.</p></div>
+</section>
+
+<section id="calculadora">
+<h2>Calculadora VAN y TIR</h2>
+<div class="card">
+<label for="inv">Inversión inicial (Q)</label><input id="inv" type="number" value="100000">
+<label for="tasa">Tasa de descuento (%)</label><input id="tasa" type="number" value="10">
+<label for="flu">Flujos anuales separados por coma (Q)</label><input id="flu" value="30000,40000,50000,40000">
+<button onclick="calc()">Calcular</button>
+<div class="res" id="out"></div>
+</div>
+</section>
+
+<section id="vida">
+<h2>4. Evidencia de vida universitaria</h2>
+<p>Mi participación individual en las actividades institucionales del año en curso.</p>
+<div class="photos">
+<div class="slot">
+<h3>Aniversario de la Universidad</h3>
+<img src="c:\Users\ovidi\Downloads\WhatsApp Image 2026-10-11 at 10.43.20 PM (1).jpeg" alt="Participación en el Aniversario de la UMG">
+
+</div>
+<div class="slot">
+<h3>Convención de la Universidad</h3>
+<img src="c:\Users\ovidi\Downloads\WhatsApp Image 2026-10-11 at 10.43.20 PM.jpeg" alt="Participación en la Convención de la UMG">
+</div>
+</section>
+
+</main>
+<footer>Contabilidad II · Universidad Mariano Gálvez de Guatemala ·</footer>
+<script src="script.js"></script>
+</body>
+</html>
