@@ -12,3 +12,4 @@ function show(inp,id){
 var f=inp.files[0];if(!f)return;
 var rd=new FileReader();rd.onload=function(e){var im=document.createElement('img');im.src=e.target.result;im.alt='Evidencia';var d=document.getElementById(id);d.innerHTML='';d.appendChild(im)};rd.readAsDataURL(f);
 }
+,dlamdd
